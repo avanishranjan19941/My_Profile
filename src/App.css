@@ -1,38 +1,80 @@
+/* General Styles */
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styles */
+.header {
+  background-color: #000;
+  color: #fff;
+  margin: 0; /* No margin to avoid overflow */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Body Styles */
+.body {
+  overflow: hidden; /* Hide overflow to prevent scrolling */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Slideshow Component */
+.slideshow {
+  position: relative;
+  width: 50%;
+  /* margin-bottom: 50px; */
+  /* margin-top: 50px; */
+  overflow: hidden; /* Prevents overflow */
+  box-sizing: border-box;
+}
+
+/* Container Styles for Flexbox Layout */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: calc(100vh - 55px); /* Full viewport height minus footer height */
+  width: 100vw;
+  overflow: hidden; /* No scrollbars should appear */
+  margin: 0; /* Ensure no margin pushes content out */
+}
+
+/* Left and Right Components */
+.left-component, .right-component {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden; /* No internal scroll */
+}
+
+.left-component {
+  background-color: #eed6d6;
+}
+
+.right-component {
+  background-color: #bbedc8;
+}
+
+/* Additional Styling */
+.left-component h2, .right-component h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.left-component p, .right-component p {
+  font-size: 1em;
+}
+
+/* Footer Styles */
+footer {
+  background-color: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  height: 55px; /* Fixed footer height */
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
