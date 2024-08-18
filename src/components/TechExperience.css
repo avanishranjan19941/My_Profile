@@ -1,54 +1,65 @@
 .tech-carousel-slide {
-    padding: 20px;
-    text-align: center;
-    background: #f5f5f5; /* Light background for the slide */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    max-width: 600px; /* Adjust max-width as needed */
-  }
-  
-  /* Card style with background color and animation */
-  .tech-carousel-card {
-    background: #e0f7fa; /* Light cyan background color */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 20px 0; /* Space between cards */
-    transform: scale(1); /* Initial scale for animation */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .tech-carousel-card:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
-  }
-  
-  .tech-carousel-card h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #00796b; /* Darker cyan color for title */
-  }
-  
-  .tech-carousel-card ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .tech-carousel-card li {
-    font-size: 1.2em;
-    margin: 5px 0;
-    color: #004d40; /* Dark greenish color for list items */
-  }
-  
-  /* Additional styles for the carousel */
-  .carousel .control-arrow {
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .carousel .control-prev.control-arrow::before,
-  .carousel .control-next.control-arrow::before {
-    font-size: 1.5em;
-    color: #fff;
-  }
-  
+  padding: 20px;
+  text-align: center;
+  background: #f5f5f5; /* Light background for the slide */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 600px; /* Adjust max-width as needed */
+}
+
+/* Fixed card size with a consistent look */
+.tech-carousel-card {
+  background: linear-gradient(145deg, #e0f7fa, #b2ebf2); /* Gradient background */
+  border-radius: 12px; /* Slightly larger border radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px auto; /* Center the card and add margin */
+  width: 100%; /* Full width of the slide */
+  max-width: 400px; /* Fixed max-width for consistency */
+  height: 300px; /* Fixed height for consistency */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  transform: scale(1); /* Initial scale for animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid #b2ebf2; /* Light border for subtle definition */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tech-carousel-card h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #00796b; /* Darker cyan color for title */
+  font-weight: 600; /* Bold title for emphasis */
+}
+
+.tech-carousel-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+}
+
+.tech-carousel-card li {
+  font-size: 1.2em;
+  margin: 8px 0;
+  color: #004d40; /* Dark greenish color for list items */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.tech-carousel-card li:hover {
+  color: #00796b; /* Change color on hover */
+}
+
+/* Additional styles for the carousel */
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%; /* Circular arrows */
+}
+
+.carousel .control-prev.control-arrow::before,
+.carousel .control-next.control-arrow::before {
+  font-size: 1.5em;
+  color: #fff;
+}
