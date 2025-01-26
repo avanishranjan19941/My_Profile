@@ -1,12 +1,49 @@
 /* Footer.css */
 .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+  background-color: #333; /* Dark background for footer */
+  color: white; /* White text color */
+  padding: 20px 10px; /* Padding for spacing */
+  text-align: center; /* Center the content */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1rem; /* Base font size */
+}
+
+/* Media Queries for responsiveness */
+
+/* For large screens like desktop */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 30px 10px; /* More padding for larger screens */
   }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+  .footer-content p {
+    font-size: 1.2rem; /* Larger font for desktops */
   }
+}
+
+/* For tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .footer {
+    padding: 25px 10px; /* Medium padding for tablets */
+  }
+  .footer-content p {
+    font-size: 1.1rem; /* Slightly larger font on tablets */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+  .footer-content p {
+    font-size: 1rem; /* Ensure the font size is still legible */
+  }
+}
+
