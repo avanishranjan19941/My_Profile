@@ -5,13 +5,17 @@
   "homepage": "https://avanishranjan19941.github.io/My_Profile",
   "dependencies": {
     "@carbon/icons-react": "^11.44.1",
+    "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "carbon-components": "^10.58.12",
     "carbon-components-react": "^8.60.3",
+    "framer-motion": "^12.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
@@ -22,7 +26,7 @@
     "@types/carbon-components-react": "latest",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^4.6.4"
   },
   "scripts": {

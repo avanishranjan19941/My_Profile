@@ -1,11 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import pic1 from '../pic1.jpg';
-import pic2 from '../pic2.jpg';
-import pic3 from '../pic3.jpg';
-import pic4 from '../pic4.jpg';
-import pic5 from '../pic5.jpg';
+import pic1 from '../assets/pic1.jpg';
+import pic2 from '../assets/pic2.jpg';
+import pic3 from '../assets/pic3.jpg';
+import pic4 from '../assets/pic4.jpg';
+import pic5 from '../assets/pic5.jpg';
 
 // Images data
 const images = [

@@ -9,40 +9,35 @@ import {
   Content,
 } from 'carbon-components-react';
 import AppFooter from './components/Footer.tsx';
+import Projects from './components/Projects.tsx';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-    <Router>
-      <div className="App">
-        <AppHeader />
-        <main className="content">
-          <Switch>
-            <Route path="/" />
-            {/* <Route path="/about" component={About} /> */}
-            {/* <Route path="/services" component={Services} /> */}
-            {/* <Route path="/contact" component={Contact} /> */}
-          </Switch>
-        </main>
-        <Content>
-        <div className="container">
-          <div className="left-component">
-          <section className="slideshow">
-            <Slideshow />
-          </section>
-          </div>
-          <div className="right-component">
-          <section >
-            <TechExperience />
-          </section>
-          </div>
+      <Router>
+        <div className="App">
+          <AppHeader />
+          <main className="content">
+            <Switch>
+              <Route path="/" />
+              <Route path="#skills" component={Slideshow} />
+              <Route path="#projects" component={Projects} />
+               {/* <Route path="/contact" component={Contact} /> */}
+            </Switch>
+          </main>
+          <Content>
+            <div className="container">
+                  <TechExperience />
+            </div>
+            <div id="projects" className='projects'>
+              <section><Projects/></section>
+              </div>
+          </Content>
         </div>
-      </Content>
-      <AppFooter/>
-      </div>
-    </Router>
-      
-     
+        <AppFooter />
+      </Router>
+
+
     </div>
   );
 }

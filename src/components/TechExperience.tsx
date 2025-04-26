@@ -1,153 +1,117 @@
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './TechExperience.css'; // You can customize styles here
+import React from "react";
+import { motion } from "framer-motion";
+import "./TechExperience.css";
 
 const techData = [
   {
-    title: 'UI Technologies',
-    items: [
-      'Angular', 'React', 'HTML', 'CSS', 'JSF', 'IBM Carbon CSS'
-    ]
+    title: "UI Technologies",
+    items: ["Angular", "React", "HTML", "CSS", "JSF", "IBM Carbon CSS"],
   },
   {
-    title: 'Runtime',
-    items: [
-      'Node.js', 'JRE'
-    ]
+    title: "Runtime",
+    items: ["Node.js", "JRE"],
   },
   {
-    title: 'RDBMS',
-    items: [
-      'MySQL', 'IBM DB2', 'Oracle 12g', 'PostgreSQL'
-    ]
+    title: "RDBMS",
+    items: ["MySQL", "IBM DB2", "Oracle 12g", "PostgreSQL"],
   },
   {
-    title: 'Frameworks',
+    title: "Frameworks",
     items: [
-      'Spring Boot', 'Light4j', 'Backstage', 'Hibernate', 'JPA', 'Kotlin', 'Flask', 'ASP.NET Core'
-    ]
+      "Spring Boot",
+      "Light4j",
+      "Backstage",
+      "Hibernate",
+      "JPA",
+      "Kotlin",
+      "Flask",
+      "ASP.NET Core",
+    ],
   },
   {
-    title: 'Build Tools',
-    items: [
-      'Maven', 'Groovy', 'Ant', 'npm', 'yarn', 'npx'
-    ]
+    title: "Build Tools",
+    items: ["Maven", "Groovy", "Ant", "npm", "yarn", "npx"],
   },
-  {
-    title: 'Architecture',
-    items: [
-      'Monolith', 'Microservices'
-    ]
-  },
-  {
-    title: 'NoSQL',
-    items: [
-      'Couchbase', 'MongoDB'
-    ]
-  },
-  {
-    title: 'Languages',
-    items: [
-      'Java', 'TypeScript', 'JavaScript', 'Python', '.NET', 'C#'
-    ]
-  },
-  {
-    title: 'OS',
-    items: [
-      'Windows 11', 'Linux'
-    ]
-  },
-  {
-    title: 'DevOps',
-    items: [
-      'Jenkins', 'GitLab', 'Kubernetes', 'IBM 1pipeline'
-    ]
-  },
-  {
-    title: 'Tools & IDEs',
-    items: [
-      'Camunda', 'JIRA', 'Confluence', 'STS', 'Eclipse', 'VS Code', 'IntelliJ', 'Postman', 'IBM RSA', 'Android Studio', 'PyCharm'
-    ]
-  },
-  {
-    title: 'Cloud & Infra',
-    items: [
-      'AWS EC2', 'ECS', 'Lambda', 'S3', 'OpenShift', 'IBM Cloud', 'Azure'
-    ]
-  },
-  {
-    title: 'Containerization',
-    items: [
-      'Docker', 'Podman', 'Fargate'
-    ]
-  },
-  {
-    title: 'Monitoring & Logging',
-    items: [
-      'ELK', 'Grafana', 'Prometheus', 'Spring Actuator'
-    ]
-  },
-  {
-    title: 'Messaging Queues',
-    items: [
-      'Apache Kafka', 'RabbitMQ', 'Apache ActiveMQ', 'Kinesis'
-    ]
-  },
-  {
-    title: 'Scripting',
-    items: [
-      'Shell', 'Python', 'Groovy'
-    ]
-  },
-  {
-    title: 'Code Repositories',
-    items: [
-      'GitLab', 'GitHub', 'Bitbucket', 'Perforce'
-    ]
-  },
-  {
-    title: 'Testing',
-    items: [
-      'Cucumber', 'Gatling', 'Mockito', 'Spring Integration Test'
-    ]
-  },
-  {
-    title: 'API Endpoint Simulator',
-    items: [
-      'Wiremock', 'Wiremock Cloud'
-    ]
-  },
-  {
-    title: 'Vault',
-    items: [
-      'HashiCorp Vault'
-    ]
-  },
-  {
-    title: 'AI',
-    items: [
-      'WatsonX AI', 'VS Code Extension', 'Data Pipeline', 'ETL with AI'
-    ]
-  }
 ];
 
+export const generateRandomGradient = () => {
+  const colors = [
+    "#FF5733",
+    "#33FF57",
+    "#3357FF",
+    "#FF33A8",
+    "#F3FF33",
+    "#33FFF3",
+    "#A833FF",
+  ];
+  const color1 = colors[Math.floor(Math.random() * colors.length)];
+  const color2 = colors[Math.floor(Math.random() * colors.length)];
+  return `linear-gradient(135deg, ${color1}, ${color2})`;
+};
+
 const TechExperience = () => {
+  const generateRandomFinalPosition = () => {
+    const maxX = window.innerWidth * 0.8; // Limit to 40% for desktop, adjust for mobile in CSS
+    const maxY = window.innerHeight * 0.8; // Limit to 40% for desktop, adjust for mobile in CSS
+    const x = getRandomNumber(maxX);
+    const y =getRandomNumber(maxY);
+    return { x, y };
+  };
+
+  function getRandomNumber(x: number): number {
+    return Math.floor(Math.random() * x);
+  }
+
+  const isMobileOrTablet = window.innerWidth <= 768; // Check if screen size is mobile/tablet
+
   return (
-    <Carousel showThumbs={false} autoPlay infiniteLoop={true} useKeyboardArrows={true}>
-      {techData.map((section, index) => (
-        <div key={index} className="tech-carousel-slide">
-          <div className="tech-carousel-card">
-          <h2>{section.title}</h2>
-          <ul>
-            {section.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-          </div>
-        </div>
-      ))}
-    </Carousel>
+    <div className="tech-experience-container">
+      {techData.map((section, sectionIndex) =>
+        section.items.map((item, itemIndex) => {
+          const initialPosition = {
+            x: Math.random() * window.innerWidth * 0.5 - window.innerWidth * 0.25,
+            y: Math.random() * window.innerHeight * 0.5 - window.innerHeight * 0.25,
+          };
+
+          const finalPosition = generateRandomFinalPosition();
+          const randomGradient = generateRandomGradient();
+
+          const scale = isMobileOrTablet ? 0.8 : 1; // Scale down for mobile/tablet
+
+          return (
+            <motion.div
+              key={`${sectionIndex}-${itemIndex}`}
+              className="tech-item"
+              style={{ background: randomGradient }}
+              initial={{
+                opacity: 0,
+                x: initialPosition.x,
+                y: initialPosition.y,
+                scale: scale,
+                position: "absolute", // Ensure absolute positioning for free movement
+              }}
+              animate={{
+                opacity: 1,
+                x: finalPosition.x,
+                y: finalPosition.y,
+                scale: scale,
+                fontWeight: "bold",
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0,
+              }}
+              transition={{
+                duration: 2,
+                delay: itemIndex * 0.3,
+              }}
+            >
+              {item}
+            </motion.div>
+          );
+        })
+      )}
+    </div>
   );
 };
 
