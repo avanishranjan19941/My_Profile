@@ -19,6 +19,9 @@ const Header: React.FC = () => {
         <a href="https://www.linkedin.com/in/avanish-ranjan-2401b9192/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} color="#0077b5" />
         </a>
+        <a href="https://www.topmate.io" target="_blank" rel="noopener noreferrer">
+          <img src={topmateLogo} alt="TopMate.io Logo" style={{ width: 40, height: 40 }} />
+        </a>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
           <div className="bar"></div>
