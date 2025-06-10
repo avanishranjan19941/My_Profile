@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #333;
+  background-color: #6c5959;
   color: white;
   font-family: 'Arial', sans-serif;
   position: relative;
@@ -44,7 +44,7 @@
   width: 250px;
   background-color: #333;
   transition: 0.3s;
-  z-index: 1; /* To ensure sidebar appears above content */
+  z-index: 5; /* To ensure sidebar appears above content */
   padding-top: 60px;
   display: flex;
   flex-direction: column;
@@ -98,4 +98,13 @@
   .logo h1 {
     font-size: 1.7em;
   }
+}
+.close-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 10; /* Ensure close button is above sidebar */
 }

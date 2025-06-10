@@ -1,191 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avanish Ranjan - Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #eef2f7, #cdddf0);
-      color: #1a1a1a;
-    }
-    .resume {
-      max-width: 1100px;
-      margin: 60px auto;
-      background: #ffffff;
-      padding: 60px 80px;
-      border-radius: 18px;
-      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: #1b2a49;
-      margin-bottom: 0.3em;
-    }
-    h2 {
-      font-size: 1.75rem;
-      color: #1f3d7a;
-      margin-top: 55px;
-      margin-bottom: 20px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid #bcd2f5;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      color: #4a4a4a;
-      margin-bottom: 35px;
-    }
-    .contact p {
-      margin: 5px 0;
-      font-size: 1rem;
-    }
-    .contact a {
-      color: #1d5fc0;
-      text-decoration: none;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-    .section p, .section ul {
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-    ul {
-      padding-left: 25px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .highlight {
-      font-weight: 600;
-      color: #1a365d;
-    }
-    em {
-      color: #6a717a;
-    }
-    .job-title {
-      font-weight: 600;
-      color: #0f2e52;
-      font-size: 1.2rem;
-      margin-top: 22px;
-    }
-    .job-date {
-      color: #6f6f6f;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    .header-section {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      border-bottom: 2px solid #d6e1f0;
-      padding-bottom: 24px;
-    }
-    .contact {
-      text-align: right;
-    }
-    .resume section {
-      transition: background 0.3s ease;
-    }
-    .resume section:hover {
-      background-color: #f4f8ff;
-      border-radius: 10px;
-      padding: 12px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanish Ranjan - Full Stack Tech Lead</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #4f46e5;
+            --accent: #06b6d4;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            padding: 0;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .name-title {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .name-title h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .name-title .title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+        
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .badge i {
+            font-size: 0.7rem;
+        }
+        
+        .content {
+            padding: 2.5rem;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .summary {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-category h3 i {
+            color: var(--accent);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .experience-item {
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--light-gray);
+        }
+        
+        .experience-item:last-child::before {
+            height: 1.5rem;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .experience-header::before {
+            content: "";
+            position: absolute;
+            left: -1.8rem;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        .company {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .position {
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .project {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .project-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .project-desc {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .tech-item {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .education-school {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .certification {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .certification i {
+            color: var(--success);
+        }
+        
+        .awards-list {
+            list-style: none;
+        }
+        
+        .award-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .award-icon {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        
+        .award-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: var(--dark);
+        }
+        
+        .award-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header, .content {
+                padding: 1.5rem;
+            }
+            
+            .name-title h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .education-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="resume">
-    <div class="header-section">
-      <div>
-        <h1>Avanish Ranjan</h1>
-        <p class="subtitle">Senior Full Stack Developer | Technology Lead | Cloud Solutions Expert</p>
-      </div>
-      <div class="contact">
-        <p><strong>Email:</strong> <a href="mailto:avanishranjan19941@gmail.com">avanishranjan19941@gmail.com</a></p>
-        <p><strong>Phone:</strong> +91 9986530091</p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/avanish-ranjan-2401b9192" target="_blank">linkedin.com/in/avanish-ranjan-2401b9192</a></p>
-        <p><strong>Location:</strong> Phoenix, Arizona</p>
-        <p><strong>Visa:</strong> H1B (Valid through 30/09/2026)</p>
-      </div>
+    <div class="resume-container">
+        <header class="header">
+            <div class="name-title">
+                <h1>AVANISH RANJAN</h1>
+                <div class="title">Full Stack Tech Lead & Cloud Developer</div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:avanishranjan19941@gmail.com">avanishranjan19941@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+16022094409">+1(602) 209 4409</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin-in"></i>
+                        <a href="https://linkedin.com/in/avanish-ranjan-2401b9192" target="_blank">linkedin.com/in/avanish-ranjan</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Phoenix, Arizona</span>
+                    </div>
+                </div>
+                
+                <div class="badges">
+                    <div class="badge">
+                        <i class="fas fa-passport"></i>
+                        <span>H1B Visa</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Valid until Sep 2026</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-briefcase"></i>
+                        <span>8+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                <p class="summary">
+                    Innovative Full Stack Developer and Tech Lead with 8+ years of experience architecting and delivering scalable enterprise applications across Telecom, Finance, Insurance, and Government sectors. 
+                    Proven expertise in modernizing legacy systems, implementing cloud-native solutions, and leading cross-functional teams. 
+                    Recognized for technical excellence, solution-oriented development, and ability to drive projects from concept to production.
+                </p>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">TECHNICAL EXPERTISE</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <ul class="skill-list">
+                            <li>Java (8/11/17) - Expert</li>
+                            <li>Kotlin - Advanced</li>
+                            <li>Python - Advanced</li>
+                            <li>JavaScript/TypeScript - Expert</li>
+                            <li>C#/.NET - Intermediate</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li>React.js (Hooks, Context, Redux)</li>
+                            <li>Angular (8+)</li>
+                            <li>IBM Carbon Design System</li>
+                            <li>Responsive HTML5/CSS3</li>
+                            <li>Figma UI/UX Design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Backend Development</h3>
+                        <ul class="skill-list">
+                            <li>Spring Boot/Spring Cloud</li>
+                            <li>Node.js/Express</li>
+                            <li>Microservices Architecture</li>
+                            <li>RESTful & GraphQL APIs</li>
+                            <li>Light4j Framework</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Databases</h3>
+                        <ul class="skill-list">
+                            <li>PostgreSQL/Oracle</li>
+                            <li>MongoDB/Couchbase</li>
+                            <li>IBM DB2</li>
+                            <li>Elasticsearch</li>
+                            <li>Hibernate/JPA</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                        <ul class="skill-list">
+                            <li>AWS (ECS, Lambda, S3)</li>
+                            <li>Docker & Kubernetes</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>GitHub Actions/GitLab CI</li>
+                            <li>OpenShift/Podman</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                        <ul class="skill-list">
+                            <li>Kafka/RabbitMQ</li>
+                            <li>Camunda BPM</li>
+                            <li>HashiCorp Vault</li>
+                            <li>Backstage.io</li>
+                            <li>ELK Stack/Grafana</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company">IBM India</span>
+                            <span class="position"> - Tech Lead / Application Developer</span>
+                        </div>
+                        <div class="date">June 2021 - Present</div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-name">Intraday Reporting – American Express</div>
+                            <div class="project-date">Oct 2024 - Present</div>
+                        </div>
+                        <ul class="project-desc">
+                            <li>Leading a team of 5 developers to build real-time financial reporting dashboard processing 50K+ transactions daily</li>
+                            <li>Architected event-driven microservices using Kotlin, Spring WebFlux, and React with TypeScript</li>
+                            <li>Implemented CI/CD pipelines with GitHub Actions reducing deployment time by 40%</li>
+                            <li>Integrated Hydra platform for ETL processes and real-time analytics</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-item">Kotlin</span>
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">GitHub Actions</span>
+                            <span class="tech-item">Hydra Platform</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-name">IPC Case Management (E&I)</div>
+                            <div class="project-date">Apr 2024 - Sept 2024</div>
+                        </div>
+                        <ul class="project-desc">
+                            <li>Developed multi-tenant SaaS platform for financial transaction investigations serving 15+ banks</li>
+                            <li>Led migration from monolithic to microservices architecture using Java 17 and Spring Boot</li>
+                            <li>Implemented AWS ECS/Fargate deployment with auto-scaling capabilities</li>
+                            <li>Reduced investigation resolution time by 30% through workflow automation</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-item">Java 17</span>
+                            <span class="tech-item">Spring Boot</span>
+                            <span class="tech-item">AWS ECS</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">React</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-name">OPM IPC Expertus</div>
+                            <div class="project-date">Jan 2023 - Mar 2024</div>
+                        </div>
+                        <ul class="project-desc">
+                            <li>Built core payment processing engine for Open Payments Marketplace handling $2M+ daily transactions</li>
+                            <li>Conducted technical evaluation of Light4j vs Spring Boot for high-performance requirements</li>
+                            <li>Implemented secure payment workflows using HashiCorp Vault for credential management</li>
+                            <li>Designed real-time notification system with AWS Kinesis</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-item">Light4j</span>
+                            <span class="tech-item">AWS Kinesis</span>
+                            <span class="tech-item">HashiCorp Vault</span>
+                            <span class="tech-item">Backstage</span>
+                            <span class="tech-item">Java 17</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-name">NCTS-P5 (EU Customs Platform)</div>
+                            <div class="project-date">Jun 2021 - Dec 2022</div>
+                        </div>
+                        <ul class="project-desc">
+                            <li>Modernized legacy customs processing system to microservices architecture serving 28 EU countries</li>
+                            <li>Implemented Kubernetes operators for custom resource management</li>
+                            <li>Developed Angular-based admin portal with role-based access control</li>
+                            <li>Reduced processing time by 25% through RabbitMQ-based event streaming</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-item">Angular</span>
+                            <span class="tech-item">Kubernetes</span>
+                            <span class="tech-item">RabbitMQ</span>
+                            <span class="tech-item">Grafana</span>
+                            <span class="tech-item">Spring Boot</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company">Amdocs India</span>
+                            <span class="position"> - Software Developer</span>
+                        </div>
+                        <div class="date">Jan 2020 - Jun 2021</div>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed order management system for telecom clients processing 10K+ daily orders</li>
+                        <li>Implemented Camunda BPM workflows reducing manual processing by 60%</li>
+                        <li>Led migration from Oracle to Couchbase improving query performance by 3x</li>
+                        <li>Integrated Elasticsearch for order tracking and analytics</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: 1rem;">
+                        <span class="tech-item">Camunda BPM</span>
+                        <span class="tech-item">Spring Boot</span>
+                        <span class="tech-item">Couchbase</span>
+                        <span class="tech-item">Kafka</span>
+                        <span class="tech-item">OpenShift</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="company">LTI (Larsen & Toubro Infotech)</span>
+                            <span class="position"> - Software Engineer</span>
+                        </div>
+                        <div class="date">Jul 2017 - Dec 2019</div>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed insurance policy management system for Marsh Canada</li>
+                        <li>Built automated PDF generation system reducing processing time by 70%</li>
+                        <li>Implemented quote comparison engine with dynamic pricing rules</li>
+                        <li>Migrated legacy JSF application to modern Angular frontend</li>
+                    </ul>
+                    <div class="project-tech" style="margin-top: 1rem;">
+                        <span class="tech-item">Java EE</span>
+                        <span class="tech-item">JSF</span>
+                        <span class="tech-item">Hibernate</span>
+                        <span class="tech-item">Oracle</span>
+                        <span class="tech-item">Angular</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">EDUCATION</h2>
+                <div class="education-item">
+                    <div>
+                        <div class="education-degree">B.E. in Electronics and Communication Engineering</div>
+                        <div class="education-school">Visvesvaraya Technological University (NCET)</div>
+                    </div>
+                    <div class="date">2016</div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">CERTIFICATIONS</h2>
+                <div class="certifications">
+                    <div class="certification">
+                        <i class="fas fa-certificate"></i>
+                        <span>IBM Cloud Advocate v1</span>
+                    </div>
+                    <div class="certification">
+                        <i class="fas fa-certificate"></i>
+                        <span>IBM Government Industry Jumpstart</span>
+                    </div>
+                    <div class="certification">
+                        <i class="fas fa-certificate"></i>
+                        <span>Java/J2EE/SQL Certified (JSpiders)</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">AWARDS & RECOGNITION</h2>
+                <ul class="awards-list">
+                    <li class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="award-content">
+                            <h4>Velocity Rockstar Award</h4>
+                            <p>IBM - Recognized for outstanding technical leadership and project delivery on the NCTS-P5 EU Customs Platform modernization</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        
+        <footer class="footer">
+            <p>References available upon request | Portfolio & GitHub available for review</p>
+        </footer>
     </div>
-
-    <section class="section">
-      <h2>Professional Summary</h2>
-      <p>Dynamic and performance-driven Full Stack Developer and Technical Lead with over 8 years of experience in building robust, scalable, and secure enterprise-grade applications. Adept at leading cross-functional teams, architecting microservices, and driving innovation using modern technologies across Telecom, Finance, Customs, and Insurance sectors. Highly skilled in cloud-native development, DevOps, and Agile practices with a proven ability to deliver impactful results.</p>
-    </section>
-
-    <section class="section">
-      <h2>Professional Experience</h2>
-
-      <p class="job-title">IBM India — Application Developer / Tech Lead</p>
-      <p class="job-date">June 2021 – Present</p>
-      <ul>
-        <li>Designed and implemented a high-performance real-time intraday reporting platform for American Express, leveraging Kotlin, React, PostgreSQL, and Hydra ETL.</li>
-        <li>Led development of a multi-tenant SaaS framework deployed via AWS Fargate and Docker with robust CI/CD automation using GitHub Actions.</li>
-        <li>Facilitated architectural decisions and mentored junior developers to ensure maintainable and scalable codebase across agile teams.</li>
-      </ul>
-
-      <p class="job-title">Amdocs India — Software Developer</p>
-      <p class="job-date">Jan 2020 – Jun 2021</p>
-      <ul>
-        <li>Delivered telecom order orchestration services utilizing Camunda BPMN engine, Kafka event streams, and Spring Boot APIs.</li>
-        <li>Boosted data retrieval performance by integrating Elasticsearch and Couchbase into the microservices stack.</li>
-      </ul>
-
-      <p class="job-title">LTI — Software Engineer</p>
-      <p class="job-date">Jul 2017 – Dec 2019</p>
-      <ul>
-        <li>Engineered insurance solutions for Marsh Canada including dynamic PDF generation, quote comparisons, and JSF-based web portals.</li>
-        <li>Upgraded legacy systems to modular Java architecture, significantly improving system performance and reliability.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Education</h2>
-      <p><strong>Bachelor of Engineering in Electronics and Communication</strong><br/>Visvesvaraya Technological University (NCET), 2016</p>
-    </section>
-
-    <section class="section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><span class="highlight">Languages:</span> Java (8-17), Kotlin, Python, JavaScript, TypeScript, C#, .NET</li>
-        <li><span class="highlight">Frontend:</span> React, Angular, JSF, HTML5, CSS3, IBM Carbon</li>
-        <li><span class="highlight">Backend:</span> Spring Boot, NodeJS, Flask, ASP.NET Core, Hibernate, JPA</li>
-        <li><span class="highlight">Databases:</span> PostgreSQL, Oracle, MongoDB, Couchbase, IBM DB2</li>
-        <li><span class="highlight">DevOps & CI/CD:</span> Jenkins, GitHub Actions, Docker, Kubernetes, OpenShift, Podman</li>
-        <li><span class="highlight">Cloud Platforms:</span> AWS, IBM Cloud, Azure</li>
-        <li><span class="highlight">Monitoring:</span> ELK Stack, Prometheus, Grafana, Spring Actuator</li>
-        <li><span class="highlight">Messaging:</span> Kafka, RabbitMQ, ActiveMQ, Kinesis</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Certifications</h2>
-      <ul>
-        <li>IBM Cloud Advocate v1 – IBM</li>
-        <li>IBM Government Industry Jumpstart – IBM</li>
-        <li>Java/J2EE/SQL Developer – JSpiders, Bangalore</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Awards</h2>
-      <ul>
-        <li>Velocity Rockstar Award – Recognized for exceptional project leadership and delivery (IBM)</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>References</h2>
-      <p>Available upon request.</p>
-    </section>
-  </div>
 </body>
 </html>

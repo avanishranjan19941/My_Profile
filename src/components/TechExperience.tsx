@@ -65,20 +65,20 @@ const TechExperience = () => {
   const isMobileOrTablet = window.innerWidth <= 768; // Check if screen size is mobile/tablet
 
   return (
-    <div className="tech-experience-container">
-      {techData.map((section, sectionIndex) =>
-        section.items.map((item, itemIndex) => {
-          const initialPosition = {
-            x: Math.random() * window.innerWidth * 0.5 - window.innerWidth * 0.25,
-            y: Math.random() * window.innerHeight * 0.5 - window.innerHeight * 0.25,
-          };
+    <><div className="tech-experience-container">
+      {techData.map((section, sectionIndex) => section.items.map((item, itemIndex) => {
+        const initialPosition = {
+          x: Math.random() * window.innerWidth * 0.5 - window.innerWidth * 0.25,
+          y: Math.random() * window.innerHeight * 0.5 - window.innerHeight * 0.25,
+        };
 
-          const finalPosition = generateRandomFinalPosition();
-          const randomGradient = generateRandomGradient();
+        const finalPosition = generateRandomFinalPosition();
+        const randomGradient = generateRandomGradient();
 
-          const scale = isMobileOrTablet ? 0.8 : 1; // Scale down for mobile/tablet
+        const scale = isMobileOrTablet ? 0.8 : 1; // Scale down for mobile/tablet
 
-          return (
+        return (
+          <>
             <motion.div
               key={`${sectionIndex}-${itemIndex}`}
               className="tech-item"
@@ -108,10 +108,14 @@ const TechExperience = () => {
             >
               {item}
             </motion.div>
-          );
-        })
+
+          </>
+        );
+      })
       )}
     </div>
+  
+      </>
   );
 };
 

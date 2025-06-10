@@ -11,7 +11,6 @@ import {
 } from 'carbon-components-react';
 import AppFooter from './components/Footer.tsx';
 import Projects from './components/Projects.tsx';
-import Resume from './components/resume.tsx';
 import Header from './components/Header.tsx';
 
 const App: React.FC = () => {
@@ -22,7 +21,7 @@ const App: React.FC = () => {
           <AppHeader />
           <main className="content">
             <Switch>
-             <Route path="/" component={Header}/>
+             <Route path="/" />
 
               <Route path="#skills" component={Slideshow} />
               <Route path="#projects" component={Projects} />
@@ -37,6 +36,9 @@ const App: React.FC = () => {
             <div id="projects" className='projects'>
               <section><Projects/></section>
               </div>
+            <div id="contact">
+              
+            </div>
           </Content>
         </div>
         <AppFooter />
